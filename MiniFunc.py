@@ -393,6 +393,17 @@ def packHeader(bodyLen):
 		count -= 1
 	headerStr += '00000000'
 	return headerStr
+
+/*this active by Dimon*/
+import re
+def paramVerification(param):
+	# param that including ONLY [a-z,A-Z,0-9,_] is legal.
+	reStr = r'^\w+$'
+	m = re.match(reStr, param)
+	if m:
+		return True
+	else:
+		return False
 	
 if '__main__' == __name__:
 	#order_no = "123456789012345612457802"
